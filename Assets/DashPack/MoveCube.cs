@@ -8,7 +8,7 @@ public class MoveCube : MonoBehaviour
     [SerializeField] private float speed = 5;
     [SerializeField] private float jump = 10;
 
-    private bool ground = true;
+    private bool isGround = true;
     private Rigidbody2D rgb;
 
     void Start()
@@ -19,18 +19,18 @@ public class MoveCube : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        ground = true;
+        isGround = true;
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        ground = false;
+        isGround = false;
     }
 
     void Update()
     {
         rgb.velocity = new Vector2(speed, rgb.velocity.y);
-        if (Input.GetKeyDown(KeyCode.Space) && ground)
+        if (Input.GetKeyDown(KeyCode.Space) && isGround)
         {
             rgb.AddForce(Vector2.up * jump, ForceMode2D.Impulse);
         }
