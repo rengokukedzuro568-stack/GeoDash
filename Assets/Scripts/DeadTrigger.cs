@@ -12,7 +12,7 @@ public class DeadTrigger : MonoBehaviour
         player = collision.gameObject.GetComponent<MoveCube>();
         if (player != null )
         {
-            SceneManager.LoadScene(0);
+            [SerializeField] private PlayerDeath 
 
         }    
     }
