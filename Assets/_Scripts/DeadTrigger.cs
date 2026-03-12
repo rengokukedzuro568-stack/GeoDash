@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class DeadTrigger : MonoBehaviour
 {
+    [SerializeField] private PlayerDeath playerDeath;
+
     private MoveCube player;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -12,7 +14,7 @@ public class DeadTrigger : MonoBehaviour
         player = collision.gameObject.GetComponent<MoveCube>();
         if (player != null )
         {
-            [SerializeField] private PlayerDeath 
+            playerDeath.DeathTrigger();
 
         }    
     }
