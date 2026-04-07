@@ -12,6 +12,7 @@ public class WallDeath : MonoBehaviour
     {
         if (collision.GetType() == typeof(TilemapCollider2D) )
             {
+            
             playerDeath.DeathTrigger();
         }
 

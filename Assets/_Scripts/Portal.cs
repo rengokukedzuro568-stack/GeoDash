@@ -8,7 +8,8 @@ public class Portal : MonoBehaviour
 {
     [SerializeField] private float jumpBoost = 20f;
     [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private PortalType portalType; 
+    [SerializeField] private PortalType portalType;
+    [SerializeField] private Transform portalDestination;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -25,7 +26,11 @@ public class Portal : MonoBehaviour
                         break;
                     }
                 case PortalType.teleport:
-                    break;
+                    {
+                        player.transform.position = portalDestination.position;
+                        break;
+                    }
+
                 default:
                     break;
             }

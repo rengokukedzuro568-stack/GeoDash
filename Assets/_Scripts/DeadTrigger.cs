@@ -15,6 +15,7 @@ public class DeadTrigger : MonoBehaviour
         if (player != null )
         {
             playerDeath.DeathTrigger();
+            Debug.Log(collision.name);
 
         }    
     }
