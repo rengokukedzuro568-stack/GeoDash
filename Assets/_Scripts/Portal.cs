@@ -31,18 +31,25 @@ public class Portal : MonoBehaviour
                         break;
                     }
 
+                case PortalType.revers:
+                    {
+                        player.Revers();
+                        break;
+                    }
+                    
                 default:
                     break;
             }
 
-           
+
         }
     }
 
     public enum PortalType
     {
         jump = 0,
-        teleport = 1
+        teleport = 1,
+        revers = 2
     }
 }
 

@@ -8,11 +8,17 @@ public class MoveCube : MonoBehaviour
     [SerializeField] private float speed = 5;
     [SerializeField] private float jump = 10;
     [SerializeField] private LayerMask layerMask;
+    private int direction = 1;
 
     public bool canMove = true;
 
     private bool isGround = true;
     private Rigidbody2D rgb;
+
+    public void Revers()
+    {
+        direction *= -1;
+    }
 
     void Start()
     {
@@ -34,7 +40,7 @@ public class MoveCube : MonoBehaviour
     {
         if (canMove)
         {
-            rgb.velocity = new Vector2(speed, rgb.velocity.y);
+            rgb.velocity = new Vector2(speed * direction, rgb.velocity.y);
             if (rgb.velocity.y < -10)
             {
                 rgb.velocity = new Vector2(rgb.velocity.x, -10);
