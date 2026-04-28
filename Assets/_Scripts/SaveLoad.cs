@@ -10,6 +10,22 @@ public class SaveLoad : MonoBehaviour
 
     private void Start()
     {
+        if (PlayerPrefs.HasKey("Checkpoint"))
+        {
+            curPoint = PlayerPrefs.GetInt("Checkpoint");
+        }
         player.position = checkpoints[curPoint].position;
     }
+    public void ChangeCheckpoint(int newCheckpoint)
+    {
+        curPoint = newCheckpoint;
+        player.position = checkpoints[curPoint].position;
+    }
+    private void OnDestroy()
+    {
+        PlayerPrefs.SetInt("Checkpoint", curPoint);
+        PlayerPrefs.Save();
+    }
 }
+
+
