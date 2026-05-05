@@ -14,7 +14,7 @@ public class Checkpoint : MonoBehaviour
         player = collision.gameObject.GetComponent<MoveCube>();
         if (player != null)
         {
-
+            progres.SaveCheckpoint(number);
         }
     }
 }
