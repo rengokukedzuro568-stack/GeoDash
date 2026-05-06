@@ -8,10 +8,15 @@ public class Test : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log(Sum(2));
+        // цикл: старт = 5, шаг = 3, до 20
+        for (int i = 5; i < 20; i += 3)
+        {
+            Debug.Log(i);
+        }
     }
+
     private int Sum(int y)
     {
-        return x*y;
+        return x * y;
     }
 }
